@@ -1,0 +1,9 @@
+﻿
+1001|Lumi|Lion|5|80|Recovering|Unit A
+1002|Nicki|Elephant|12|95|Healthy|Unit B
+1003|Maxwell|Monkey|3|45|Critical|Unit C
+1004|Louis|Zebra|4|70|Recovering|Unit A
+1005|Asap|Pigeon|2|88|Ready for Release|Unit D
+1006|Zara|Lion|6|60|Recovering|Unit B
+1007|Nora|Giraffe|7|100|Healthy|Unit C
+1008|Cocomelon|Penguin|1|30|Critical|Unit D
