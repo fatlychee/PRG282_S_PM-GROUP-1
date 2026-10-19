@@ -4,11 +4,11 @@
 A Windows Forms application used to manage animal recovery records, track recovery scores, and generate summary reports.
 
 ## Group Members
-- Member 1: [Full Name] - [Student Number] - Core Models & Business Logic
+- Member 1: [Full name] - [Student number] - Core Models & Business Logic
 - Member 2: [Full Name] - [Student Number] - View Animals & File Loading
 - Member 3: [Full Name] - [Student Number] - Add Animal Feature
 - Member 4: [Full Name] - [Student Number] - Update & Delete Features
-- Member 5: [Your Full Name] - [Your Student Number] - Summary, Error Handling & GitHub Manager
+- Member 5: [Christopher Heyl] - [602473] - Summary, Error Handling & GitHub Manager
 
 ## Build Instructions
 1. Clone the repository.
@@ -25,9 +25,9 @@ A Windows Forms application used to manage animal recovery records, track recove
 
 ## File Formats
 ### animals.txt
-Comma-separated values in the format:
-`AnimalID,Name,Species,Age,RecoveryScore,Status`
-Example: `WR-0001,Luna,Lion,5,85,Release-Ready`
+Pipe-separated values in the format:
+`AnimalID|Name|Species|Age|RecoveryScore|Status|HousingUnit`
+Example: `WR-0001|Thabo|African Penguin|4|85|Release-Ready|Pre-Release Camp`
 
 ### summary.txt
 A generated text report showing:
