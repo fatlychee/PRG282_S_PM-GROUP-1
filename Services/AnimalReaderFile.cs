@@ -11,73 +11,69 @@ namespace PRG2782_Project_2026.Services
 {
     public class AnimalReaderFile
     {       // Gets the path of animals.txt beside the running application.
-            private readonly string filePath =
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "animals.txt");
+        private readonly string filePath =
+            Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Animal.txt");
 
-            // Stores how many records were skipped during the last load.
-            public int SkippedRecords { get; private set; }
+        // Stores how many records were skipped during the last load.
+        public int SkippedRecords { get; private set; }
 
-            // Loads valid animal records from the text file.
-            public List<Animal> LoadAnimals()
-            {
-            
-
+        // Loads valid animal records from the text file.
+        public List<Animal> LoadAnimals()
+        {
             List<Animal> animals = new List<Animal>();
-                SkippedRecords = 0;
+            SkippedRecords = 0;
 
-                try
+            try
+            {
+                // Create an empty file if it does not exist.
+                if (!File.Exists(filePath))
                 {
-                    // Create an empty file if it does not exist.
-                    if (!File.Exists(filePath))
+                    using (File.Create(filePath))
                     {
-                        using (File.Create(filePath))
-                        {
-                        }
-
-                        return animals;
                     }
 
-                    // Read the file using UTF-8 encoding.
-                    string[] lines = File.ReadAllLines(filePath, Encoding.UTF8);
+                    return animals;
+                }
 
-               // string[] lines = File.ReadAllLines(filePath, Encoding.UTF8);
-                MessageBox.Show("Path: " + filePath + "\nLines found: " + lines.Length);
+                // Read the file using UTF-8 encoding.
+                string[] lines = File.ReadAllLines(filePath, Encoding.UTF8);
 
 
                 // Check every line separately so one bad record
                 // does not prevent the other records from loading.
                 foreach (string line in lines)
-                    {
-                        Animal animal = ParseAnimal(line);
+                {
+                    Animal animal = ParseAnimal(line);
 
-                        if (animal != null)
-                        {
-                            animals.Add(animal);
-                        }
-                        else
-                        {
-                            SkippedRecords++;
-                        }
+                    if (animal != null)
+                    {
+                        animals.Add(animal);
+                    }
+                    else
+                    {
+                        SkippedRecords++;
                     }
                 }
-                catch (IOException ex)
-                {
-                    throw new IOException(
-                        "The animal records file could not be read. Check whether it is being used by another program.",
-                        ex);
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    throw new UnauthorizedAccessException(
-                        "The application does not have permission to read the animal records file.",
-                        ex);
-                }
-
-                return animals;
+            }
+            catch (IOException ex)
+            {
+                throw new IOException(
+                    "The animal records file could not be read. Check whether it is being used by another program.",
+                    ex);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                throw new UnauthorizedAccessException(
+                    "The application does not have permission to read the animal records file.",
+                    ex);
             }
 
-            // Converts one line of text into an Animal object.
-            // Returns null if the line does not contain a valid record.
+            return animals;
+        }
+
+        // Converts one line of text into an Animal object.
+        // Returns null if the line does not contain a valid record.
+         
             private Animal ParseAnimal(string line)
             {
                 if (string.IsNullOrWhiteSpace(line))
@@ -131,19 +127,21 @@ namespace PRG2782_Project_2026.Services
                     parts[6]);
             }
 
-            // Checks whether an ID contains WR- followed by four digits.
-            private bool IsValidAnimalID(string animalID)
+        // Checks whether an ID contains WR- followed by four digits.
+        private bool IsValidAnimalID(string animalID)
+        {
+            if (animalID == null || animalID.Length != 7)
             {
-                if (animalID == null || animalID.Length != 7)
-                {
-                    return false;
-                }
+                return false;
+            }
 
-                if (!animalID.StartsWith("WR-"))
-                {
-                    return false;
-                }
+            if (!animalID.StartsWith("WR-"))
+            {
+                return false;
 
+            }
+            else 
+            {
                 for (int i = 3; i < animalID.Length; i++)
                 {
                     if (!char.IsDigit(animalID[i]))
@@ -151,11 +149,12 @@ namespace PRG2782_Project_2026.Services
                         return false;
                     }
                 }
-
-                return true;
             }
+
+            return true;
         }
     }
+}
 
 
 
