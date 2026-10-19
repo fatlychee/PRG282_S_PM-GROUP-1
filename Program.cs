@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG2782_Project_2026.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace PRG2782_Project_2026
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new AnimalForm());
         }
     }
 }
