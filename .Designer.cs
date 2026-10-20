@@ -2,14 +2,10 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
+       
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -34,12 +30,12 @@
             this.txtAnimalId = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.txtScore = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAnimalId = new System.Windows.Forms.Label();
             this.lblSpecies = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -89,18 +85,7 @@
             this.txtScore.Size = new System.Drawing.Size(215, 20);
             this.txtScore.TabIndex = 4;
             // 
-            // label1 (title)
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 31);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "ADD ANIMAL";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2 (Name label)
+            // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(40, 194);
@@ -110,12 +95,12 @@
             this.label2.Text = "Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3 (Recovery Score label)
+            // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(335, 194);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Recovery Score";
             // 
@@ -124,7 +109,7 @@
             this.lblAnimalId.AutoSize = true;
             this.lblAnimalId.Location = new System.Drawing.Point(25, 110);
             this.lblAnimalId.Name = "lblAnimalId";
-            this.lblAnimalId.Size = new System.Drawing.Size(50, 13);
+            this.lblAnimalId.Size = new System.Drawing.Size(52, 13);
             this.lblAnimalId.TabIndex = 9;
             this.lblAnimalId.Text = "Animal ID";
             // 
@@ -133,7 +118,7 @@
             this.lblSpecies.AutoSize = true;
             this.lblSpecies.Location = new System.Drawing.Point(33, 280);
             this.lblSpecies.Name = "lblSpecies";
-            this.lblSpecies.Size = new System.Drawing.Size(42, 13);
+            this.lblSpecies.Size = new System.Drawing.Size(45, 13);
             this.lblSpecies.TabIndex = 10;
             this.lblSpecies.Text = "Species";
             // 
@@ -142,9 +127,20 @@
             this.lblAge.AutoSize = true;
             this.lblAge.Location = new System.Drawing.Point(350, 110);
             this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(65, 13);
+            this.lblAge.Size = new System.Drawing.Size(60, 13);
             this.lblAge.TabIndex = 11;
             this.lblAge.Text = "Age (years)";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(487, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Baobab Ridge Wildlife Rehabilitation";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
@@ -178,12 +174,17 @@
         private System.Windows.Forms.TextBox txtAnimalId;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.TextBox txtScore;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAnimalId;
         private System.Windows.Forms.Label lblSpecies;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAge;
+
+        private void label1_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
 

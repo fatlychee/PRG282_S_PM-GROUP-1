@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PRG2782_Project_2026.Services
 {
-//SUMMARY:
+
 //     Handles classification logic for animal records based on recovery scores.
     public static class ClassificationService
     {
-        //SUMMARY:
-        //     Calculates the status and housing unit based on the recovery.
+        
+        
         public static (string Status, string HousingUnit) GetClassification(int score)
         {
             if (score >= 0 && score <= 19)

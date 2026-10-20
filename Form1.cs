@@ -12,7 +12,7 @@ namespace PRG2782_Project_2026
         private readonly string animalsFilePath =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "animals.txt");
 
-        // Sets up the form and its controls.
+        
         public Form1()
         {
             InitializeComponent();
@@ -21,10 +21,10 @@ namespace PRG2782_Project_2026
         // TEMPORARY stand-in until the View feature is merged.
         private void RefreshGrid() { }
 
-        // Validates the inputs, classifies the animal, saves it and updates the screen.
+        
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Step 1: Member 1's service checks all five fields; empty string = all valid
+            
             string error = ValidationService.ValidateFields(
                 txtAnimalId.Text, txtName.Text, txtSpecies.Text, txtAge.Text, txtScore.Text);
 
@@ -34,14 +34,14 @@ namespace PRG2782_Project_2026
                 return;   // nothing saved
             }
 
-            // Step 2: safe to read the values now, because validation passed
+            //  read the values now, because validation passed
             string animalId = txtAnimalId.Text.Trim().ToUpper();
             string name = txtName.Text.Trim();
             string species = txtSpecies.Text.Trim();
             int age = int.Parse(txtAge.Text.Trim());
             int score = int.Parse(txtScore.Text.Trim());
 
-            // Step 3: save, with file error handling
+            //  save, with file error handling
             try
             {
                 if (ValidationService.IsDuplicateID(animalId, GetExistingIds()))
@@ -50,10 +50,10 @@ namespace PRG2782_Project_2026
                     return;
                 }
 
-                // The single shared classification method (Member 1's ClassificationService)
+                //  ClassificationService
                 (string status, string housingUnit) = ClassificationService.GetClassification(score);
 
-                // Build one line: ID|Name|Species|Age|Score|Status|Housing Unit
+                
                 string line = string.Join("|", animalId, name, species, age, score, status, housingUnit);
                 File.AppendAllText(animalsFilePath, line + Environment.NewLine);
 
@@ -109,13 +109,13 @@ namespace PRG2782_Project_2026
             return ids;
         }
 
-        // Required by the designer link; intentionally empty.
+        
         private void textBox2_TextChanged(object sender, EventArgs e) { }
 
-        // Required by the designer link; intentionally empty.
-        private void label1_Click(object sender, EventArgs e) { }
+        
+       
 
-        // Required by the designer link; intentionally empty.
+       
         private void label2_Click(object sender, EventArgs e) { }
     }
 }
