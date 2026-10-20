@@ -1,14 +1,15 @@
-# PRG2782 Project 2026 - Animal Recovery Tracker
+# PRG2782 Project 2026 - Baobab Ridge Wildlife Rehabilitation Centre
 
 ## Project Description
-A Windows Forms application used to manage animal recovery records, track recovery scores, and generate summary reports.
+A Windows Forms application used to manage animal recovery records, track recovery scores, and generate summary reports for the Baobab Ridge Wildlife Rehabilitation Centre.
 
 ## Group Members
-- Member 1: [Full name] - [Student number] - Core Models & Business Logic
-- Member 2: [Full Name] - [Student Number] - View Animals & File Loading
-- Member 3: [Full Name] - [Student Number] - Add Animal Feature
-- Member 4: [Full Name] - [Student Number] - Update & Delete Features
-- Member 5: [Christopher Heyl] - [602473] - Summary, Error Handling & GitHub Manager
+- Member 1: Lumile Johns - 604931 - Core Models & Business Logic
+- Member 2: Tumelo Lepota - 604239 - View Animals & File Loading
+- Member 3: Seth White - 603397 - Add Animal Feature
+- Member 4: Ben Linde - 603396 - Update & Delete Features
+- Member 5: Christopher Heyl - 602473 - Summary, Error Handling & GitHub Manager
+
 
 ## Build Instructions
 1. Clone the repository.
