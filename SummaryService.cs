@@ -5,7 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace PRG2782_Project_2026 // IMPORTANT: Change this to match your project's namespace!
+namespace PRG2782_Project_2026
 {
     public class SummaryResult
     {
@@ -33,8 +33,9 @@ namespace PRG2782_Project_2026 // IMPORTANT: Change this to match your project's
                     string[] lines = File.ReadAllLines(filePath);
                     foreach (string line in lines)
                     {
-                        string[] parts = line.Split(',');
-                        if (parts.Length == 6)
+                        // RUBRIC FIX: Uses pipe | and expects 7 fields
+                        string[] parts = line.Split('|');
+                        if (parts.Length == 7)
                         {
                             try
                             {
@@ -45,7 +46,8 @@ namespace PRG2782_Project_2026 // IMPORTANT: Change this to match your project's
                                     Species = parts[2].Trim(),
                                     Age = int.Parse(parts[3].Trim()),
                                     RecoveryScore = int.Parse(parts[4].Trim()),
-                                    Status = parts[5].Trim()
+                                    Status = parts[5].Trim(),
+                                    HousingUnit = parts[6].Trim()
                                 });
                             }
                             catch { /* Skip malformed records */ }
@@ -53,9 +55,8 @@ namespace PRG2782_Project_2026 // IMPORTANT: Change this to match your project's
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // If there's a file error, we'll return empty results
                 return result;
             }
 
@@ -70,24 +71,30 @@ namespace PRG2782_Project_2026 // IMPORTANT: Change this to match your project's
             result.Recovering = animals.Count(a => a.Status == "Recovering");
             result.ReleaseReady = animals.Count(a => a.Status == "Release-Ready");
 
-            // Build the report string and save to summary.txt
-            string report = "Summary Report\n==============\n";
-            report += "Total animals".PadRight(26) + result.Total + "\n";
-            report += "Average age (years)".PadRight(26) + result.AvgAge + "\n";
-            report += "Average recovery score".PadRight(26) + result.AvgScore + "\n";
-            report += "Critical".PadRight(26) + result.Critical + "\n";
-            report += "Serious".PadRight(26) + result.Serious + "\n";
-            report += "Stable".PadRight(26) + result.Stable + "\n";
-            report += "Recovering".PadRight(26) + result.Recovering + "\n";
-            report += "Release-Ready".PadRight(26) + result.ReleaseReady + "\n";
+            // Build the report string EXACTLY as the rubric demands
+            string report = "BAOBAB RIDGE WILDLIFE REHABILITATION CENTRE\n";
+            report += "ANIMAL SUMMARY REPORT\n";
+            report += $"Generated: {DateTime.Now.ToString("yyyy-MM-dd HH:mm")}\n\n";
+
+            report += $"Total animals: {result.Total}\n";
+            report += $"Average age (years): {result.AvgAge}\n";
+            report += $"Average recovery score: {result.AvgScore}\n\n";
+
+            report += "Animals per status:\n";
+            report += $"Critical: {result.Critical}\n";
+            report += $"Serious: {result.Serious}\n";
+            report += $"Stable: {result.Stable}\n";
+            report += $"Recovering: {result.Recovering}\n";
+            report += $"Release-Ready: {result.ReleaseReady}\n";
 
             try
             {
-                File.WriteAllText("summary.txt", report);
+                // Save beside the .exe
+                string summaryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "summary.txt");
+                File.WriteAllText(summaryPath, report);
             }
             catch (Exception ex)
             {
-                // If we can't write the file, we still want the UI to show the results
                 System.Windows.Forms.MessageBox.Show(FileErrorHelper.GetFriendlyErrorMessage(ex), "File Error");
             }
 
