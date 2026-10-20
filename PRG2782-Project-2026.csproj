@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayer\AnimalFileService.cs" />
     <Compile Include="FileErrorHelper.cs" />
     <Compile Include="SummaryService.cs" />
     <Compile Include="Form1.cs">

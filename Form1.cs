@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using PRG2782_Project_2026.Services;
 using PRG2782_Project_2026.Forms;
+using PRG2782_Project_2026.Models;
 
 namespace PRG2782_Project_2026
 {
@@ -35,7 +36,7 @@ namespace PRG2782_Project_2026
             this.Controls.Add(txtSummaryResults);
             // -----------------------------------------------------------------------
 
-            // --- QUICK NAVIGATION TO ANIMALFORM ---
+            // --- QUICK NAVIGATION TO ANIMALFORM (VIEW) ---
             Button btnViewAnimals = new Button();
             btnViewAnimals.Text = "View Animals Grid";
             btnViewAnimals.Location = new System.Drawing.Point(200, 280);
