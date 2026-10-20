@@ -17,7 +17,7 @@ namespace PRG2782_Project_2026
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnimalForm());
+            Application.Run(new Form1());
         }
     }
 }
