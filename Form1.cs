@@ -68,7 +68,7 @@ namespace PRG2782_Project_2026
             }
         }
 
-        // Works out which textbox an error message is about, from the start of the message.
+        
         private TextBox GetFaultyBox(string error)
         {
             if (error.StartsWith("Animal ID")) return txtAnimalId;
