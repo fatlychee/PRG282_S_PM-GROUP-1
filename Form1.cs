@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using PRG2782_Project_2026.Services;
-using PRG2782_Project_2026.Forms; // Added in case AnimalForm is in the Forms folder
+using PRG2782_Project_2026.Forms;
 
 namespace PRG2782_Project_2026
 {
@@ -38,7 +38,7 @@ namespace PRG2782_Project_2026
             // --- QUICK NAVIGATION TO ANIMALFORM ---
             Button btnViewAnimals = new Button();
             btnViewAnimals.Text = "View Animals Grid";
-            btnViewAnimals.Location = new System.Drawing.Point(200, 280); // Next to Generate Summary
+            btnViewAnimals.Location = new System.Drawing.Point(200, 280);
             btnViewAnimals.Size = new System.Drawing.Size(150, 30);
             btnViewAnimals.Click += (s, ev) =>
             {
